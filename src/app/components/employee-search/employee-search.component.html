@@ -1,0 +1,20 @@
+<h4>Search an Employee</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Select a Name</mat-label>
+  <mat-select [(value)]="valueSelected" (selectionChange)="onSelectChange($event.value)">
+    <mat-option *ngFor="let emp of emp_data" [value]="emp.fullName">
+      {{emp.fullName}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div class="card" style="width: 100%;" *ngIf="searchedEmp">
+  <div class="card-body">
+    <h3 class="card-title">{{searchedEmp.fullName}}</h3>
+    <h5 class="card-subtitle mb-2 text-muted">{{searchedEmp.position}} | {{searchedEmp.company}}</h5>
+    <h5 class="card-subtitle mb-2 text-muted">{{searchedEmp.gender | gender}}</h5>
+    <p class="card-text">{{searchedEmp.dob | date : 'longDate'}}</p>
+    <a href="#" class="card-link">{{searchedEmp.email}}</a>
+    <a href="#" class="card-link">{{searchedEmp.phone}}</a>
+  </div>
+</div>
