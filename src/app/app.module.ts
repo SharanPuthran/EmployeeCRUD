@@ -19,7 +19,6 @@ import { EmployeeDialogComponent } from './components/employee-dialog/employee-d
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { GenderPipe } from './gender.pipe';
 import {MatIconModule} from '@angular/material/icon';
 import { EmployeeDeleteComponent } from './components/employee-delete/employee-delete.component';
@@ -50,7 +49,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule, 
-    MatMomentDateModule,
     MatIconModule
   ],
   
