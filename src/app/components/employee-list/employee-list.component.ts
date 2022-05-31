@@ -52,8 +52,14 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
   }
 
   addEmployee(): void {
-    this.dialog.open(EmployeeDialogComponent, {
+    const addDialogRef = this.dialog.open(EmployeeDialogComponent, {
       width: '500px',
+    });
+    addDialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.getEmployees();
+        this.table?.renderRows();
+      }
     });
   }
 
